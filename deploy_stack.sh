@@ -2,6 +2,7 @@ echo "Pre-requisite: create a grant for default service account of kube-system a
 read
 helm init
 helm dep build .
+sleep 5
 helm install --name my-release -f values.yaml .
 
 echo "Installation started. When the installation is done, find the elastic search port by looking at the kibana node port service `kubectl get svc`,"
